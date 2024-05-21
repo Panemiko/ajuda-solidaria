@@ -1,0 +1,56 @@
+@hostname = http://localhost:3000
+
+## Importante: trocar caso necessário
+@indiceId = clwgr3vjs0001hqxk7x7bgn3m
+@categoriaId = clwgqs2pu000088gitke957ms
+
+### Criar indice
+POST {{hostname}}/indice
+Content-Type: application/json
+
+{
+  "nome": "Nome do índice",
+  "descricao": "Descrição do índice",
+  "link": "https://google.com",
+  "categorias": [
+    "Dinheiro",
+    "Roupas"
+  ]
+}
+
+### Ver único indice
+GET {{hostname}}/indice/{{indiceId}}
+Content-Type: application/json
+
+### Atualizar indice
+PUT {{hostname}}/indice/{{indiceId}}
+Content-Type: application/json
+
+{
+  "nome": "Nome do índice 2: A volta dos que não foram",
+  "descricao": "Descrição do índice",
+  "link": "https://github.com",
+  "categorias": [
+    "Roupass"
+  ]
+}
+
+### Ver todos os índices
+GET {{hostname}}/indices
+Content-Type: application/json
+
+### Ver todos os índices (com atributos)
+GET {{hostname}}/indices?take=2&skip=1
+Content-Type: application/json
+
+### Ver todos os índices (por categoria)
+GET {{hostname}}/indices?categorias={{categoriaId}}
+Content-Type: application/json
+
+### Contagem de indices
+GET {{hostname}}/indices/contagem
+Content-Type: application/json
+
+### Lista das categorias
+GET {{hostname}}/categorias
+Content-Type: application/json

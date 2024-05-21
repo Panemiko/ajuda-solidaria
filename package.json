@@ -3,11 +3,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/app.mjs"
+    "start": "node ./src/app.mjs",
+    "dev": "nodemon ./src/app.mjs"
   },
   "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "5.14.0",
+    "contrast-color": "^1.0.1",
     "dotenv": "^16.4.5",
     "fastify": "^4.27.0",
-    "prisma": "^5.14.0"
+    "fastify-autoroutes": "^3.0.2",
+    "nodemon": "^3.1.0",
+    "prisma": "^5.14.0",
+    "randomcolor": "^0.6.2"
   }
 }
